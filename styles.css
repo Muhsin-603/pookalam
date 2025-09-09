@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.pookkalam-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.pookkalam {
+    position: relative;
+    width: min(500px, 90vw);
+    height: min(500px, 90vw);
+    border-radius: 100%;
+    background-color: #f0f0f0;
+    overflow: visible;
+}
+
+.pookkalam-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translate(35%, 0); /* You can adjust these values to move the entire pookkalam */
+}
+
+
+.triangle-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 29%;
+    left: -7%;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 20px solid #666;
+    transform-origin: center 100px;
+}
+
+/* Position triangles around the circle */
+.triangle:nth-child(1) { transform: rotate(0deg) translateY(-100px); }
+.triangle:nth-child(2) { transform: rotate(30deg) translateY(-100px); }
+.triangle:nth-child(3) { transform: rotate(60deg) translateY(-100px); }
+.triangle:nth-child(4) { transform: rotate(90deg) translateY(-100px); }
+.triangle:nth-child(5) { transform: rotate(120deg) translateY(-100px); }
+.triangle:nth-child(6) { transform: rotate(150deg) translateY(-100px); }
+.triangle:nth-child(7) { transform: rotate(180deg) translateY(-100px); }
+.triangle:nth-child(8) { transform: rotate(210deg) translateY(-100px); }
+.triangle:nth-child(9) { transform: rotate(240deg) translateY(-100px); }
+.triangle:nth-child(10) { transform: rotate(270deg) translateY(-100px); }
+.triangle:nth-child(11) { transform: rotate(300deg) translateY(-100px); }
+.triangle:nth-child(12) { transform: rotate(330deg) translateY(-100px); }
+
+.border-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+
+
+/* Border units positioned around the circle */
+.border-unit:nth-child(1) { transform: rotate(15deg) translateX(250px); }
+.border-unit:nth-child(2) { transform: rotate(30deg) translateX(250px); }
+.border-unit:nth-child(3) { transform: rotate(45deg) translateX(250px); }
+.border-unit:nth-child(4) { transform: rotate(60deg) translateX(250px); }
+.border-unit:nth-child(5) { transform: rotate(75deg) translateX(250px); }
+.border-unit:nth-child(6) { transform: rotate(90deg) translateX(250px); }
+.border-unit:nth-child(7) { transform: rotate(105deg) translateX(250px); }
+.border-unit:nth-child(8) { transform: rotate(120deg) translateX(250px); }
+.border-unit:nth-child(9) { transform: rotate(135deg) translateX(250px); }
+.border-unit:nth-child(10) { transform: rotate(150deg) translateX(250px); }
+.border-unit:nth-child(11) { transform: rotate(165deg) translateX(250px); }
+.border-unit:nth-child(12) { transform: rotate(180deg) translateX(250px); }
+.border-unit:nth-child(13) { transform: rotate(195deg) translateX(250px); }
+.border-unit:nth-child(14) { transform: rotate(210deg) translateX(250px); }
+.border-unit:nth-child(15) { transform: rotate(225deg) translateX(250px); }
+.border-unit:nth-child(16) { transform: rotate(240deg) translateX(250px); }
+.border-unit:nth-child(17) { transform: rotate(255deg) translateX(250px); }
+.border-unit:nth-child(18) { transform: rotate(270deg) translateX(250px); }
+.border-unit:nth-child(19) { transform: rotate(285deg) translateX(250px); }
+.border-unit:nth-child(20) { transform: rotate(300deg) translateX(250px); }
+.border-unit:nth-child(21) { transform: rotate(315deg) translateX(250px); }
+.border-unit:nth-child(22) { transform: rotate(330deg) translateX(250px); }
+.border-unit:nth-child(23) { transform: rotate(345deg) translateX(250px); }
+.border-unit:nth-child(24) { transform: rotate(360deg) translateX(250px); }
+
+.outer-circle {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 14%;
+    left: -22%;
+    border: 1px solid #666;
+    border-radius: 50%;
+}
+
+.main-pattern {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+}
+
+.petal-set {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.center-circles {
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+}
+
+.center-circle {
+    position: absolute;
+    border: 1px solid #666;
+    border-radius: 50%;
+}
+
+.center-circle.large {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-circle.small {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.petal {
+    position: absolute;
+    width: 80px;
+    height: 140px;
+    border: 1px solid #666;
+    border-radius: 50% 50% 30% 30%;
+    transform-origin: bottom center;
+    bottom: 50%;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg) translateY(-20px); }
+.petal:nth-child(2) { transform: rotate(45deg) translateY(-20px); }
+.petal:nth-child(3) { transform: rotate(90deg) translateY(-20px); }
+.petal:nth-child(4) { transform: rotate(135deg) translateY(-20px); }
+.petal:nth-child(5) { transform: rotate(180deg) translateY(-20px); }
+.petal:nth-child(6) { transform: rotate(225deg) translateY(-20px); }
+.petal:nth-child(7) { transform: rotate(270deg) translateY(-20px); }
+.petal:nth-child(8) { transform: rotate(315deg) translateY(-20px); }
