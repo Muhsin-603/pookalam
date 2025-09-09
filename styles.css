@@ -8,6 +8,34 @@ body {
     background-color: #f0f0f0;
 }
 
+.outer-circle {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 11%;
+    left: -24%;
+    border: 8px solid #FF6600;  /* Slightly darker orange for better contrast */
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #000000;  /* Black outline for definition */
+    background: radial-gradient(circle at center,
+        #FFD700 0%,     /* Gold */
+        #FFA500 30%,    /* Orange */
+        #FF4500 60%,    /* Deep orange */
+        #FF0000 85%,    /* Red */
+        #000000 98%     /* Black edge */
+    );
+    z-index: -1;
+}
+
+/* Inner flower container */
+.inner-flower-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 2%;
+}
+
 /* Overlay Patterns Group - Main container for all overlay patterns */
 .overlay-patterns {
     position: absolute;
@@ -64,8 +92,32 @@ body {
     width: min(500px, 90vw);
     height: min(500px, 90vw);
     border-radius: 100%;
-    background-color: #f0f0f0;
     overflow: visible;
+}
+
+/* Background fill that stays behind all elements */
+.pookkalam::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center,
+        #000000 0%,    /* Black center */
+        #000000 30%,   /* Black extends */
+        transparent 30.5%,
+        transparent 45%,
+        #006400 45.5%, /* Dark green */
+        #003300 65%,   /* Darker green */
+        transparent 65.5%,
+        transparent 75%,
+        #8B0000 75.5%, /* Dark red */
+        #FF0000 85%,   /* Bright red */
+        transparent 85.5%
+    );
+    z-index: -2;
 }
 
 .pookkalam-group {
@@ -78,41 +130,9 @@ body {
 }
 
 
-.triangle-pattern {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 29%;
-    left: -7%;
-}
-
-.triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 20px solid #666;
-    transform-origin: center 100px;
-}
-
-/* Position triangles around the circle */
-.triangle:nth-child(1) { transform: rotate(0deg) translateY(-100px); }
-.triangle:nth-child(2) { transform: rotate(30deg) translateY(-100px); }
-.triangle:nth-child(3) { transform: rotate(60deg) translateY(-100px); }
-.triangle:nth-child(4) { transform: rotate(90deg) translateY(-100px); }
-.triangle:nth-child(5) { transform: rotate(120deg) translateY(-100px); }
-.triangle:nth-child(6) { transform: rotate(150deg) translateY(-100px); }
-.triangle:nth-child(7) { transform: rotate(180deg) translateY(-100px); }
-.triangle:nth-child(8) { transform: rotate(210deg) translateY(-100px); }
-.triangle:nth-child(9) { transform: rotate(240deg) translateY(-100px); }
-.triangle:nth-child(10) { transform: rotate(270deg) translateY(-100px); }
-.triangle:nth-child(11) { transform: rotate(300deg) translateY(-100px); }
-.triangle:nth-child(12) { transform: rotate(330deg) translateY(-100px); }
-
 .border-pattern {
     position: absolute;
-    width: 100%;
+    width: 200%;
     height: 100%;
     border-radius: 100%;
 }
@@ -149,10 +169,11 @@ body {
     position: absolute;
     width: 70%;
     height: 70%;
-    top: 13%;
+    top: 14%;
     left: -23%;
-    border: 5px solid #f24141;
+    border: 5px solid #000000;  /* Bright orange from the reference */
     border-radius: 50%;
+    background: radial-gradient(circle at center, transparent 98%, #000000 98%);
 }
 
 .main-pattern {
@@ -180,8 +201,8 @@ body {
 
 .center-circle {
     position: absolute;
-    border: 1px solid #666;
     border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
 .center-circle.large {
@@ -190,6 +211,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center,
+        #006400,  /* Dark green */
+        #004d00   /* Darker green */
+    );
+    border: 2px solid #003300;
 }
 
 .center-circle.small {
@@ -198,16 +224,27 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center,
+        #DC143C,  /* Crimson */
+        #8B0000   /* Dark red */
+    );
+    border: 2px solid #800000;
 }
 
 .petal {
     position: absolute;
     width: 80px;
     height: 140px;
-    border: 1px solid #666;
+    border: none;
+    background: linear-gradient(45deg,
+        #000000,  /* Black */
+        #006400,  /* Dark green */
+        #008000   /* Green */
+    );
     border-radius: 50% 50% 30% 30%;
     transform-origin: bottom center;
     bottom: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
 .petal:nth-child(1) { transform: rotate(0deg) translateY(-20px); }
@@ -246,10 +283,16 @@ body {
     position: absolute;
     width: 60px;
     height: 120px;
-    background: linear-gradient(to right, #FF4500, #FFA500, #FFFFFF);
+    background: linear-gradient(45deg, 
+        #FF4500,  /* Deep orange */
+        #FFA500,  /* Orange */
+        #FFD700,  /* Yellow */
+        #FFFFFF   /* White */
+    );
     border-radius: 50% 50% 30% 30%;
     transform-origin: bottom center;
     bottom: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
 .gradient-layer .petal-set .gradient-petal:nth-child(1) { transform: rotate(0deg) translateY(-15px); }
@@ -279,10 +322,15 @@ body {
     position: absolute;
     width: 40px;
     height: 80px;
-    background: linear-gradient(to right, #FF0000, #8B0000);
+    background: linear-gradient(45deg,
+        #8B0000,  /* Dark red */
+        #FF0000,  /* Bright red */
+        #DC143C   /* Crimson */
+    );
     border-radius: 50% 50% 30% 30%;
     transform-origin: bottom center;
     bottom: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 
 .accent-layer .petal-set .accent-petal:nth-child(1) { transform: rotate(0deg) translateY(-10px); }
